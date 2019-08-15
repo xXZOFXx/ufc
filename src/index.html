@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Clase master</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+<script type="text/javascript">
+function makeTimer() {
+
+    var endTime = new Date("21 September 2019 10:00:00 GMT-5");
+    endTime = (Date.parse(endTime) / 1000);
+
+
+    var now = new Date();
+    now = (Date.parse(now) / 1000);
+
+    var timeLeft = endTime - now;
+
+    var days = Math.floor(timeLeft / 86400);
+    var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+    var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
+    var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+
+    if (hours < "10") { hours = "0" + hours; }
+    if (minutes < "10") { minutes = "0" + minutes; }
+    if (seconds < "10") { seconds = "0" + seconds; }
+
+    $("#days").html(days);
+    $("#hours").html(hours);
+    $("#minutes").html(minutes);
+    $("#seconds").html(seconds);
+
+    if (days=="0" && hours=="00" && minutes=="00" && seconds=="00") {
+      console.log("cero");
+      $("#timer").hide();
+    }
+
+}
+
+setInterval(function() { makeTimer(); }, 1000);
+</script>
+
+
+
+<script type="text/javascript">
+(function(){function $MPC_load(){window.$MPC_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = document.location.protocol+"//secure.mlstatic.com/mptools/render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;})();}window.$MPC_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;})();
+</script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</html>
