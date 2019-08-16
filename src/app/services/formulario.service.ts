@@ -11,7 +11,7 @@ import { Form } from '../models/Form';
 })
 export class FormularioService {
 
-  API_URI = 'http://localhost:3000/api';
+  API_URI = 'https://ufc-data12.herokuapp.com/api';
 
 
   constructor( private http: HttpClient) { }

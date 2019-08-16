@@ -59,7 +59,8 @@ export class HomeComponent implements OnInit {
         res => {
 
           console.log(res);
-
+          alert("Formulario Enviado, \n Nuestro equipo se pondra en contacto en breve");
+          window.location.replace("https://theroofempresarial.com.mx/");
         },
 
         err => console.error(err)

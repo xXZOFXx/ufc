@@ -19,8 +19,8 @@
            </div>
          </div>
        </div>
-       <div class="col-md-4">
-         <h1 style="text-align:center; color:white; margin-top: 3%;">PREVENTA</h1>
+       <div class="col-md-4" style="margin-top: 2%;">
+         <h1 style="text-align:center; color:white; margin-top: 3%;">Registro para lista de espera</h1>
          <!--<button type="button" class="btn btn-warning btn-lg btn-block" style="margin-top: 3%;">Adquiere tus boletos</button>-->
        </div>
        <div class="col-md-4">
@@ -105,8 +105,8 @@
         <div class="col ubicacion">
              <h2> <b> 21 de Septiembre. 10:00 AM</b></h2>
              <h2>(Registro 9:00 AM)</h2>
-             <h3><a href="https://goo.gl/maps/snQiQcyWtYPTqbRPA"><i class="fa fa-map-marker"> <b> Plan Sexenal</b></i></a></h3>
-             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.0199051874506!2d-99.17565098509294!3d19.45470858687178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8bdfa10b9bb%3A0xcc06b9ac0a6050eb!2sPlan+Sexenal%2C+Nextitla%2C+11420+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses-419!2smx!4v1565893115596!5m2!1ses-419!2smx" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+             <h3><a href="https://goo.gl/maps/snQiQcyWtYPTqbRPA"><i class="fa fa-map-marker amarillo"> <b class="amarillo"> Plan Sexenal</b></i></a></h3>
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.0199051874506!2d-99.17565098509294!3d19.45470858687178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8bdfa10b9bb%3A0xcc06b9ac0a6050eb!2sPlan+Sexenal%2C+Nextitla%2C+11420+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses-419!2smx!4v1565893115596!5m2!1ses-419!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
 
         <div class="card bg-dark text-white">
@@ -118,7 +118,7 @@
                     <h5 class="card-title mod1 shad">Enterate cuando estén a la venta</h5>
                     <div class="col mod1">
                       <button type="button" class="btn btn-warning mod1" data-toggle="modal" data-target="#exampleModalCenter">
-                          Reserva tú lugar
+                          Registro para lista de espera
                           </button>
 
                     </div>
@@ -170,14 +170,14 @@
                     							<div class="col-sm-6 space-f">
                     								<div class="inputBox form-group">
                     									<div class="inputText"></div>
-                                      <input type="text" name="correo" [(ngModel)]="form.correo" placeholder="correo" class="form-control">
+                                      <input id="choose"  name="correo" [(ngModel)]="form.correo" placeholder="correo" class="form-control" type="email" >
                     								</div>
                     							</div>
 
                     							<div class="col-sm-6 space-f">
                     								<div class="inputBox form-group">
                     									<div class="inputText"></div>
-                         <select name="prefe_pago" [(ngModel)]="form.prefe_pago" id="inputState" class="form-control">
+                         <select name="prefe_pago" [(ngModel)]="form.cat_prefe_pago" id="inputState" class="form-control">
                            <option  value="0" selected disabled>Elige</option>
                            <option value="1">MercadoPago</option>
                            <option value="2">Tarjeta</option>
@@ -188,7 +188,7 @@
                     						</div>
 
                       <div class="col-md-12 envia">
-                        <button class="btn btn-outline-light" (click)="salvarNuevoForm()">
+                        <button type="submit" class="btn btn-outline-light" (click)="salvarNuevoForm()" name="myOtherButton" onclick="doStuff(this.form, true);"  >
                                     Enviar
                                     </button>
                       </div>
@@ -306,11 +306,14 @@
 
 
       <div class="col patrocinios">
-        <h3><b class="amarillo" >Patrocinado por:</b></h3>
+        <h3><b class="" >Patrocinado por:</b></h3>
         <div class="row">
 
           <div class="col">
             <img src="assets/eclipseR.png" width="170em" height="100" class="rounded mx-auto d-block" alt="...">
+          </div>
+          <div class="col">
+            <img src="assets/ibm.png" width="170em" height="100" class="rounded mx-auto d-block" alt="...">
           </div>
           <div class="col">
             <img src="assets/aishaR.png" width="170em" height="100"  class="rounded mx-auto d-block" alt="...">
@@ -330,58 +333,6 @@
 
 
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-<form action="/procesar-pago" method="POST">
-  <script
-    src="https://www.mercadopago.com.co/integrations/v1/web-tokenize-checkout.js"
-    data-public-key="ENV_PUBLIC_KEY"
-    data-transaction-amount="100.00">
-  </script>
-</form>
-
-        <div class="gli-img">
-          <!-- this elem will be glitch -->
-          <div class="glitch-img" style="background-image: url('assets/indice.jpeg'); width:100%; height:100%;"></div>
-
-      </div>
-
-      <div class="formulario">
-         <div class="texto2">
-            <h2>Form</h2>
-         </div>
-         <form>
-            <div class="form-group">
-               <input type="text" name="nombre" [(ngModel)]="form.nombre" placeholder="Nombre" class="form-control">
-            </div>
-            <div class="form-group">
-               <input type="text" name="edad" [(ngModel)]="form.edad" placeholder="Edad" class="form-control">
-            </div>
-            <div class="form-group">
-               <input type="text" name="país" [(ngModel)]="form.cat_pais" placeholder="pais" class="form-control">
-            </div>
-            <div class="form-group">
-               <input type="text" name="estado"  [(ngModel)]="form.cat_estado" placeholder="Estado" class="form-control">
-            </div>
-            <div class="form-group">
-               <input type="text" name="doc"  [(ngModel)]="form.cat_doc" placeholder="doc" class="form-control">
-            </div>
-            <div class="form-group">
-               <input type="text" name="prefrencia de pago"  [(ngModel)]="form.cat_prefe_pago" placeholder="prefrencia de pago" class="form-control">
-            </div>
-            <div class="form-group">
-               <input type="text" name="escuela"  [(ngModel)]="form.escuela" placeholder="escuela" class="form-control">
-            </div>
-            <div class="form-group">
-               <input type="text" name="tipo"  [(ngModel)]="form.cat_tipo" placeholder="tipo" class="form-control">
-            </div>
-            <div class="form-group">
-               <input type="text" name="tipo"  [(ngModel)]="form.correo" placeholder="tipo" class="form-control">
-            </div>
-            <button class="btn btn-secondary" (click)="salvarNuevoForm()">
-            Enviar
-            </button>
-         </form>
-      </div>
 
 
       <footer class="page-footer font-small blue">
